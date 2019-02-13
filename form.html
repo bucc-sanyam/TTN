@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TTN Form</title>
+		<link rel="stylesheet" type="text/css" href="formcss.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+<body>
+
+	<div>
+		<h1 id="ttn">TO THE NEW</h1>
+		<span id="options">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Quick Help</a></li>
+			</ul>
+		</span>
+	</div>
+	<hr>			
+
+	<div  id="content">
+		<br/>
+		<form  id="form">
+			
+			<div id = 'bug'>Bug Report</div>
+			
+			<div class='input-heads'>
+				Title
+				<span class='input-text'>*</span>
+				<br>
+				<input type="text" class="input_box" name="title_input">
+			</div>
+
+			<div class="input-heads">
+				Description
+				<span class="input-text">*</span>
+				<br>
+				<textarea type='text' class="input_box" name="desc_input" rows="6" >
+				</textarea>
+			</div>
+
+			<div class="input-heads">
+				Operating System
+				<br>
+				<select  class="drop-menu" name=select_os>
+					<option>Windows 10</option>
+					<option>Windows 8</option>
+					<option>Windows 7</option>
+					<option>Mac OS</option>
+					<option>Linux</option>
+					<option>Fedora</option>
+				</select>
+			</div>
+
+			<div class="input-heads">
+				Product
+				<span class="input-text">*</span>
+				<br>
+				<select class="drop-menu" name=select_product>
+					<option>Fedora</option>
+					<option>Debian</option>
+					<option>openSUSE</option>
+					<option>PCLinuxOS</option>
+					<option>Mandriva</option>
+					<option>Gentoo</option>
+				</select>
+			</div>
+
+			<div class="input-heads">
+				Version
+				<span class="input-text">*</span>
+				<br>
+				<input type="text" class="ver" name="version"">
+			</div>
+			<div class="input-heads">
+				License
+				<br>
+				<span>
+					<input type="radio" name="free" value="free">Free
+					<input type="radio" class="radio" name="business" value="business">Business
+				</span>
+			</div>
+			<div class="input-heads">
+				Severity
+				<br>
+				<select class="drop-menu" name=severity>
+					<option>Critical</option>
+					<option>High</option>
+					<option>Medium</option>
+					<option>Low</option>
+				</select>
+			</div>
+			<div class="input-heads">
+				Attachments:
+				<br>
+				<input type="file" class="attach" name="attachment">
+				<br>
+				<br>
+			</div>
+			<div id="submit">
+				<button class="send">
+				Send
+				</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
