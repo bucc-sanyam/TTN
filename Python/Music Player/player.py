@@ -144,7 +144,7 @@ def sort_songs_by_name():
 
 
 def sort_songs_by_date():
-    for key, value in sorted(mydict.items(), key=lambda (k,v): (v,k)):
+    pass
 
 
 ## Display 
