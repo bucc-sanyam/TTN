@@ -219,7 +219,7 @@ def display_actions():
     "\n10. Exit player.")
     try:
         choice = int(input("\nEnter choice : "))
-        if (choice > 10):
+        if 10 < choice <= 0:
             raise Exception("Invalid Choice.")
     except:
         print("Please enter a valid choice.")
