@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Employee(models.Model):
@@ -7,7 +9,7 @@ class Employee(models.Model):
     salary = models.IntegerField()
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
-    reporting_manager = models.ForeignKey('self', null=False, on_delete=models.CASCADE, default=4)
+    reporting_manager = models.ForeignKey('self', null=False, on_delete=models.CASCADE)
 
     designation_choices = [
         ('CEO', 'CEO'),
@@ -17,3 +19,10 @@ class Employee(models.Model):
     ]
 
     designation = models.CharField(max_length=50, choices=designation_choices)
+
+
+@receiver(post_save, sender=Employee)
+def create_user_profile(sender, instance, **kwargs):
+        instance.reporting_manager = instance
+        instance.save()
+
