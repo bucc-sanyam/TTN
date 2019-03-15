@@ -7,7 +7,7 @@ class Employee(models.Model):
     salary = models.IntegerField()
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
-    reporting_manager = models.ForeignKey('self', null=True, on_delete=models.CASCADE)
+    reporting_manager = models.ForeignKey('self', null=False, on_delete=models.CASCADE, default=4)
 
     designation_choices = [
         ('CEO', 'CEO'),
