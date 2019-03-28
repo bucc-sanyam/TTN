@@ -7,4 +7,5 @@ urlpatterns = [
     path('file/output/<str:fileName>', foutput, name="foutput"),
     path('file/update/<str:fileName>', fupdate, name='fupdate'),
     path('file/delete/<str:fileName>', delfile, name = 'delfile'),
+    path('hellouser/<str:username>',hellouser, name= 'hellouser')
 ]

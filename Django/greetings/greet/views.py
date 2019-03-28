@@ -2,21 +2,26 @@ import datetime
 import os
 
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import json
+
+
+def hellouser(request, username):
+    return render(request, 'hello.html', {'name': username})
 
 
 def daytime(request, time):
     """ Function to print various actions """
 
     if 12 > time >= 6:
-        return HttpResponse("Good Morning!")
+        return render(request, 'hello.html', {'greet': "Good Morning!"})
     elif 18 > time >= 12:
-        return HttpResponse("Good Afternoon!")
+        return render(request, 'hello.html', {'greet': "Good Afternoon!"})
     elif 24 > time >= 18:
-        return HttpResponse("Good Night!")
+        return render(request, 'hello.html', {'greet': "Good Night!"})
     else:
-        return HttpResponse("Go to bed!!")
+        return render(request, 'hello.html', {'greet': "Go to bed!!"})
 
 
 def home(request):

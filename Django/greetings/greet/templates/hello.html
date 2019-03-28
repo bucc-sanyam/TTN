@@ -1,10 +1,19 @@
 <!DOCTYPE html>
+{% extends "parent.html" %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-<h1>Hello World!</h1>
+{% load review_extras  %}
+{% block body %}
+{% if name %}
+<h1>{{ name|cut:"a" }}</h1>
+<h1>{{ name|lower }}</h1>
+{% else %}
+<h1>{{ greet }}</h1>
+{% endif %}
+{% endblock body %}
 </body>
 </html>
