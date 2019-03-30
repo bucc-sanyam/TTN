@@ -22,4 +22,5 @@ class sessioncount(View):
         my_count = my_count + 1
         request.session['my_count'] = self.count = my_count
         request.session.set_expiry(300)
+        print(request.session)
         return HttpResponse(str(self.count) + " and the Expiry age : " + request.session.get_expiry_age().__str__())
