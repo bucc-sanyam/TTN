@@ -1,5 +1,8 @@
+from django.template.response import TemplateResponse
 from django.utils.deprecation import MiddlewareMixin
 from django.shortcuts import HttpResponse, render
+
+from greet.views import hellouser
 
 
 class Footer:
@@ -11,5 +14,7 @@ class Footer:
         return response
 
     def process_template_response(self, request, response):
-        return render("<p>Made by : Sanyam Gupta</p>")
+        response = hellouser(request)
+        response.context_data['footer'] = 'Made by : Sanyam Gupta'
+        return response
 
