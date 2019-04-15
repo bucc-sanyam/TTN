@@ -3,12 +3,14 @@ import os
 
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.response import TemplateResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
 
-def hellouser(request, username):
-    return render(request, 'hello.html', {'name': username})
+def hellouser(request):
+    context_data = {'name': "Sanyam", 'footer': 'footer'}
+    return TemplateResponse(request, 'hello.html', context=context_data)
 
 
 def daytime(request, time):

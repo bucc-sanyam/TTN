@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+
 </head>
 <body>
 {% load review_extras  %}
@@ -11,6 +12,7 @@
 {% if name %}
 <h1>{{ name|cut:"a" }}</h1>
 <h1>{{ name|lower }}</h1>
+    <p>{{ footer }}</p>
 {% else %}
 <h1>{{ greet }}</h1>
 {% endif %}

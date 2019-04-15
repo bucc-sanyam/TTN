@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('greet.urls')),
+    path('cbvapp/', include('cbvapp.urls')),
     path('mycustomadmin/', admin.site.urls),
 ]
